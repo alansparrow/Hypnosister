@@ -7,6 +7,7 @@
 //
 
 #import "HypnosisterAppDelegate.h"
+#import "HypnosisView.h"
 
 @implementation HypnosisterAppDelegate
 
@@ -14,6 +15,48 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    CGRect screenRect = [[self window] bounds];
+    
+    // Create the UIScrollView to have the size of the window, matching its size
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:screenRect];
+    [[self window] addSubview:scrollView];
+    
+//    CGRect viewFrame = CGRectMake(160, 240, 100, 150);
+    
+//    HypnosisView *view = [[HypnosisView alloc] initWithFrame:viewFrame];
+//    [view setBackgroundColor:[UIColor redColor]];
+//    HypnosisView *view = [[HypnosisView alloc] initWithFrame:[[self window] bounds]];
+    
+    // Create the HypnosisView with a frame that is twice the size of the screen
+    CGRect bigRect = screenRect;
+    bigRect.size.width *= 2.0;
+    bigRect.size.height *= 2.0;
+    HypnosisView *view = [[HypnosisView alloc] initWithFrame:bigRect];
+    
+//    [[self window] addSubview:view];
+    
+    // Add the HypnosisView as a subview of the scrollView instead of the window
+    [scrollView addSubview:view];
+    
+    // Tell the scrollView how big its virtual world is
+    [scrollView setContentSize:bigRect.size];
+    
+    BOOL success = [view becomeFirstResponder];
+    if (success) {
+        NSLog(@"HypnosisView became the first responder");
+    } else {
+        NSLog(@"Could not become first responder");
+    }
+    
+//    CGRect anotherFrame = CGRectMake(20, 30, 50, 50);
+    
+//    HypnosisView *anotherView = [[HypnosisView alloc] initWithFrame:anotherFrame];
+//    [anotherView setBackgroundColor:[UIColor blueColor]];
+    
+//    [[self window] addSubview:anotherView];
+//  [view addSubview:anotherView];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
