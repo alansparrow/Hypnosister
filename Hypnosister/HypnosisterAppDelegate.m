@@ -8,6 +8,7 @@
 
 #import "HypnosisterAppDelegate.h"
 #import "HypnosisView.h"
+#import "LogoView.h"
 
 @implementation HypnosisterAppDelegate
 
@@ -45,6 +46,16 @@
 //    HypnosisView *view = [[HypnosisView alloc] initWithFrame:bigRect];
 //    HypnosisView *view = [[HypnosisView alloc] initWithFrame:screenRect];
     view = [[HypnosisView alloc] initWithFrame:screenRect];
+    
+    
+    // Add logo
+    CGRect imageRect;
+    imageRect.origin.x = 0;
+    imageRect.origin.y = 0;
+    imageRect.size.height = 100;
+    imageRect.size.width = 100;
+    logoView = [[LogoView alloc] initWithFrame:imageRect];
+    [view addSubview:logoView];
     
 //    [[self window] addSubview:view];
     

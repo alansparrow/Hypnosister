@@ -48,6 +48,9 @@
         
         // Perform drawing instruction; removes path
         CGContextStrokePath(ctx);
+        
+        
+        [[self getRandomColor] setStroke];
     }
     
     // Create a string
@@ -80,6 +83,24 @@
     // Draw the string
     [text drawInRect:textRect withFont:font];
     
+    
+    // Save the context state
+    CGContextSaveGState(ctx);
+    
+    // Add green crosshair in the middle
+    CGContextSetLineWidth(ctx, 5);
+    [[UIColor greenColor] setStroke];
+    offset = CGSizeMake(0, 0);
+    CGContextSetShadowWithColor(ctx, offset, 0.0, [[UIColor greenColor] CGColor]);
+    CGContextMoveToPoint(ctx, center.x, center.y - 20);
+    CGContextAddLineToPoint(ctx, center.x, center.y + 20);
+    CGContextStrokePath(ctx);
+    
+    CGContextMoveToPoint(ctx, center.x - 20, center.y);
+    CGContextAddLineToPoint(ctx, center.x + 20, center.y);
+    CGContextStrokePath(ctx);
+    
+    
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -102,7 +123,7 @@
 {
     if (motion == UIEventSubtypeMotionShake) {
         NSLog(@"Device started shaking!");
-        [self setCircleColor:[UIColor redColor]];
+        [self setCircleColor:[self getRandomColor]];
     }
 }
 
@@ -111,5 +132,16 @@
 {
     circleColor = clr;
     [self setNeedsDisplay];
+}
+
+- (UIColor *) getRandomColor
+{
+    // Set random color
+    CGFloat hue = ( arc4random() % 256 / 256.0 ); // 0.0 to 1.0
+    CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5; // 0.5 to 1.0, away from white
+    CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5; // 0.5 to 1.0, away from black
+    UIColor *color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
+    
+    return color;
 }
 @end

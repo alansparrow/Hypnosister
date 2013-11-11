@@ -20,6 +20,8 @@
 		D83A329B182DB9AD000FCB4E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D83A3299182DB9AD000FCB4E /* InfoPlist.strings */; };
 		D83A329D182DB9AD000FCB4E /* HypnosisterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D83A329C182DB9AD000FCB4E /* HypnosisterTests.m */; };
 		D83A32A8182DB9ED000FCB4E /* HypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = D83A32A7182DB9ED000FCB4E /* HypnosisView.m */; };
+		D83A32B118305F6E000FCB4E /* LogoView.m in Sources */ = {isa = PBXBuildFile; fileRef = D83A32B018305F6E000FCB4E /* LogoView.m */; };
+		D83A32B3183063B4000FCB4E /* bnr-twitter-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D83A32B2183063B4000FCB4E /* bnr-twitter-logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		D83A329C182DB9AD000FCB4E /* HypnosisterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HypnosisterTests.m; sourceTree = "<group>"; };
 		D83A32A6182DB9ED000FCB4E /* HypnosisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HypnosisView.h; sourceTree = "<group>"; };
 		D83A32A7182DB9ED000FCB4E /* HypnosisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HypnosisView.m; sourceTree = "<group>"; };
+		D83A32AF18305F6E000FCB4E /* LogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoView.h; sourceTree = "<group>"; };
+		D83A32B018305F6E000FCB4E /* LogoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoView.m; sourceTree = "<group>"; };
+		D83A32B2183063B4000FCB4E /* bnr-twitter-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bnr-twitter-logo.png"; path = "../../Resources/bnr-twitter-logo.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,10 +115,13 @@
 		D83A327D182DB9AD000FCB4E /* Hypnosister */ = {
 			isa = PBXGroup;
 			children = (
+				D83A32B2183063B4000FCB4E /* bnr-twitter-logo.png */,
 				D83A3286182DB9AD000FCB4E /* HypnosisterAppDelegate.h */,
 				D83A3287182DB9AD000FCB4E /* HypnosisterAppDelegate.m */,
 				D83A32A6182DB9ED000FCB4E /* HypnosisView.h */,
 				D83A32A7182DB9ED000FCB4E /* HypnosisView.m */,
+				D83A32AF18305F6E000FCB4E /* LogoView.h */,
+				D83A32B018305F6E000FCB4E /* LogoView.m */,
 				D83A3289182DB9AD000FCB4E /* Images.xcassets */,
 				D83A327E182DB9AD000FCB4E /* Supporting Files */,
 			);
@@ -227,6 +235,7 @@
 			files = (
 				D83A3282182DB9AD000FCB4E /* InfoPlist.strings in Resources */,
 				D83A328A182DB9AD000FCB4E /* Images.xcassets in Resources */,
+				D83A32B3183063B4000FCB4E /* bnr-twitter-logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D83A3284182DB9AD000FCB4E /* main.m in Sources */,
+				D83A32B118305F6E000FCB4E /* LogoView.m in Sources */,
 				D83A3288182DB9AD000FCB4E /* HypnosisterAppDelegate.m in Sources */,
 				D83A32A8182DB9ED000FCB4E /* HypnosisView.m in Sources */,
 			);

@@ -10,8 +10,9 @@
 
 @interface HypnosisView : UIView
 {
-    
+
 }
+- (UIColor *) getRandomColor;
 
 @property (nonatomic, strong) UIColor *circleColor;
 

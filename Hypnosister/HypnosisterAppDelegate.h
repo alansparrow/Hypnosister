@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "HypnosisView.h"
+#import "LogoView.h"
 
 @interface HypnosisterAppDelegate : UIResponder <UIApplicationDelegate, UIScrollViewDelegate>
 {
     HypnosisView *view;
+    LogoView *logoView;
 }
 
 @property (strong, nonatomic) UIWindow *window;
